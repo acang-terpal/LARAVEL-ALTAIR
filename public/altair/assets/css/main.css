@@ -10213,7 +10213,7 @@ div.ganttview .ui-resizable-w {
 .tablesorter-altair .tablesorter-processing {
   background-position: center center !important;
   background-repeat: no-repeat !important;
-  background-image: url(assets/img/spinners/spinner.gif) !important;
+  background-image: url(altair/assetsimg/spinners/spinner.gif) !important;
 }
 .tablesorter-altair caption {
   background-color: #fff;

@@ -175,7 +175,7 @@ altair_dashboard = {
                         "stylers": [{"visibility": "off"}]
                     }]
                 },
-                marker_url = isHighDensity() ? 'altair/assets/img/md-images/ic_location_history_black_48dp.png' : 'altair/assets/img/md-images/ic_location_history_black_24dp.png',
+                marker_url = isHighDensity() ? 'altair/altair/assetsimg/md-images/ic_location_history_black_48dp.png' : 'altair/altair/assetsimg/md-images/ic_location_history_black_24dp.png',
                 marker_size = isHighDensity() ? new google.maps.Size(48, 48) : new google.maps.Size(24, 24),
                 marker_scaled_size = new google.maps.Size(24, 24),
                 marker_zoom = 14,

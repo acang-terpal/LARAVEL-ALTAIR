@@ -24,7 +24,7 @@ Download packages
 
 	$ npm install
 
-Compile assets
+Compile altair/assets
 
 	$ gulp build
 

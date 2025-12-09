@@ -9,7 +9,7 @@ altair_tree = {
         $("#tA").fancytree({
             checkbox: true,
             selectMode: 1,
-            imagePath: "assets/icons/others/",
+            imagePath: "altair/assetsicons/others/",
             extensions: ["dnd", "wide"],
             autoScroll: true,
             activate: function(event, data) {
@@ -26,7 +26,7 @@ altair_tree = {
         $("#tB").fancytree({
             checkbox: true,
             selectMode: 3,
-            imagePath: "assets/icons/others/",
+            imagePath: "altair/assetsicons/others/",
             extensions: ["dnd", "wide"],
             autoScroll: true,
             activate: function(event, data) {

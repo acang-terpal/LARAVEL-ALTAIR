@@ -136,7 +136,7 @@ altair_datatables = {
             var table_tableTools = $dt_tableTools.DataTable();
 
             var tt = new $.fn.dataTable.TableTools( table_tableTools, {
-                "sSwfPath": "bower_components/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
+                "sSwfPath": "altair/bower_components/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
             });
 
             $( tt.fnContainer() ).insertBefore( $dt_tableTools.closest('.dt-uikit').find('.dt-uikit-header'));

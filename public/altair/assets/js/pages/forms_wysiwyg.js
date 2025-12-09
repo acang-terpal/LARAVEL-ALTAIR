@@ -16,7 +16,7 @@ altair_wysiwyg = {
                 .ckeditor(function() {
                     /* Callback function code. */
                 }, {
-                    customConfig: '../../assets/js/custom/ckeditor_config.js'
+                    customConfig: '../../altair/assetsjs/custom/ckeditor_config.js'
                 });
         }
     },
@@ -28,7 +28,7 @@ altair_wysiwyg = {
                 .ckeditor(function() {
                     /* Callback function code. */
                 }, {
-                    customConfig: '../../assets/js/custom/ckeditor_config.js',
+                    customConfig: '../../altair/assetsjs/custom/ckeditor_config.js',
                     allowedContent: true
                 });
         }
@@ -37,7 +37,7 @@ altair_wysiwyg = {
         var $tinymce = '#wysiwyg_tinymce';
         if($($tinymce).length) {
             tinymce.init({
-                skin_url: 'assets/skins/tinymce/material_design',
+                skin_url: 'altair/assetsskins/tinymce/material_design',
                 selector: "#wysiwyg_tinymce",
                 plugins: [
                     "advlist autolink lists link image charmap print preview anchor",

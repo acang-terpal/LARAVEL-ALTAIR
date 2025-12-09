@@ -36,6 +36,10 @@
     <![endif]-->
 @endsection
 
+@section("header")
+    @include("layout.header")
+@endsection
+
 @section('sidebar_main')
     @include('layout.sidebar_main')
 @endsection

@@ -30,10 +30,14 @@
 
     <!-- matchMedia polyfill for testing media queries in JS -->
     <!--[if lte IE 9]>
-            <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.js"></script>
-            <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.addListener.js"></script>
-            <link rel="stylesheet" href="altair/assets/css/ie.css" media="all">
-        <![endif]-->
+                <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.js"></script>
+                <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.addListener.js"></script>
+                <link rel="stylesheet" href="altair/assets/css/ie.css" media="all">
+            <![endif]-->
+@endsection
+
+@section("header")
+    @include("layout.header")
 @endsection
 
 @section('sidebar_main')
@@ -55,177 +59,197 @@
                     <div class="uk-width-large-3-10 hidden-print uk-visible-large">
                         <div class="md-list-outside-wrapper">
                             <ul class="md-list md-list-outside invoices_list" id="invoices_list">
-    
+
                                 <li class="heading_list">June 2016</li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="2">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 23/2015 <span class="uk-text-small uk-text-muted">(27 Jun)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 23/2015 <span
+                                                class="uk-text-small uk-text-muted">(27 Jun)</span></span>
                                         <span class="uk-text-small uk-text-muted">Flatley-Berge</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="3">
                                         <span class="uk-badge uk-badge-primary">Header/Footer</span>
-                                        <span class="md-list-heading uk-text-truncate">Invoice 151/2015 <span class="uk-text-small uk-text-muted">(26 Jun)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 151/2015 <span
+                                                class="uk-text-small uk-text-muted">(26 Jun)</span></span>
                                         <span class="uk-text-small uk-text-muted">Larkin-Bernhard</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="4">
                                         <span class="uk-badge uk-badge-danger">Overdue</span>
-                                        <span class="md-list-heading uk-text-truncate">Invoice 89/2015 <span class="uk-text-small uk-text-muted">(25 Jun)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 89/2015 <span
+                                                class="uk-text-small uk-text-muted">(25 Jun)</span></span>
                                         <span class="uk-text-small uk-text-muted">Stark, Maggio and Weimann</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="5">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 62/2015 <span class="uk-text-small uk-text-muted">(24 Jun)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 62/2015 <span
+                                                class="uk-text-small uk-text-muted">(24 Jun)</span></span>
                                         <span class="uk-text-small uk-text-muted">Douglas-Lakin</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="6">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 84/2015 <span class="uk-text-small uk-text-muted">(23 Jun)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 84/2015 <span
+                                                class="uk-text-small uk-text-muted">(23 Jun)</span></span>
                                         <span class="uk-text-small uk-text-muted">D'Amore and Sons</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="7">
                                         <span class="uk-badge uk-badge-primary">Header/Footer</span>
-                                        <span class="md-list-heading uk-text-truncate">Invoice 21/2015 <span class="uk-text-small uk-text-muted">(22 Jun)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 21/2015 <span
+                                                class="uk-text-small uk-text-muted">(22 Jun)</span></span>
                                         <span class="uk-text-small uk-text-muted">Mertz and Sons</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li class="heading_list">Oldest</li>
-    
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="9">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 34/2015 <span class="uk-text-small uk-text-muted">(13 Mar)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 34/2015 <span
+                                                class="uk-text-small uk-text-muted">(13 Mar)</span></span>
                                         <span class="uk-text-small uk-text-muted">Corwin Group</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="10">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 37/2015 <span class="uk-text-small uk-text-muted">(29 Apr)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 37/2015 <span
+                                                class="uk-text-small uk-text-muted">(29 Apr)</span></span>
                                         <span class="uk-text-small uk-text-muted">Hyatt Group</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="11">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 28/2015 <span class="uk-text-small uk-text-muted">(9 May)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 28/2015 <span
+                                                class="uk-text-small uk-text-muted">(9 May)</span></span>
                                         <span class="uk-text-small uk-text-muted">Herman-Kohler</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="12">
                                         <span class="uk-badge uk-badge-danger">Overdue</span>
-                                        <span class="md-list-heading uk-text-truncate">Invoice 172/2015 <span class="uk-text-small uk-text-muted">(20 Mar)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 172/2015 <span
+                                                class="uk-text-small uk-text-muted">(20 Mar)</span></span>
                                         <span class="uk-text-small uk-text-muted">Fay, Yost and Morar</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="13">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 107/2015 <span class="uk-text-small uk-text-muted">(24 Apr)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 107/2015 <span
+                                                class="uk-text-small uk-text-muted">(24 Apr)</span></span>
                                         <span class="uk-text-small uk-text-muted">Brakus, Bayer and Barton</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="14">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 197/2015 <span class="uk-text-small uk-text-muted">(23 May)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 197/2015 <span
+                                                class="uk-text-small uk-text-muted">(23 May)</span></span>
                                         <span class="uk-text-small uk-text-muted">Schulist, Rolfson and Jaskolski</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="15">
                                         <span class="uk-badge uk-badge-danger">Overdue</span>
-                                        <span class="md-list-heading uk-text-truncate">Invoice 79/2015 <span class="uk-text-small uk-text-muted">(1 Mar)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 79/2015 <span
+                                                class="uk-text-small uk-text-muted">(1 Mar)</span></span>
                                         <span class="uk-text-small uk-text-muted">Bashirian, Stamm and Moore</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="16">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 102/2015 <span class="uk-text-small uk-text-muted">(1 May)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 102/2015 <span
+                                                class="uk-text-small uk-text-muted">(1 May)</span></span>
                                         <span class="uk-text-small uk-text-muted">Wyman and Sons</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="17">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 164/2015 <span class="uk-text-small uk-text-muted">(17 Feb)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 164/2015 <span
+                                                class="uk-text-small uk-text-muted">(17 Feb)</span></span>
                                         <span class="uk-text-small uk-text-muted">Terry-Kovacek</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="18">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 185/2015 <span class="uk-text-small uk-text-muted">(14 Apr)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 185/2015 <span
+                                                class="uk-text-small uk-text-muted">(14 Apr)</span></span>
                                         <span class="uk-text-small uk-text-muted">Bruen Group</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="19">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 83/2015 <span class="uk-text-small uk-text-muted">(22 Apr)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 83/2015 <span
+                                                class="uk-text-small uk-text-muted">(22 Apr)</span></span>
                                         <span class="uk-text-small uk-text-muted">Block, Ernser and Greenholt</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="20">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 72/2015 <span class="uk-text-small uk-text-muted">(17 Apr)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 72/2015 <span
+                                                class="uk-text-small uk-text-muted">(17 Apr)</span></span>
                                         <span class="uk-text-small uk-text-muted">O'Hara Ltd</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="21">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 195/2015 <span class="uk-text-small uk-text-muted">(12 Mar)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 195/2015 <span
+                                                class="uk-text-small uk-text-muted">(12 Mar)</span></span>
                                         <span class="uk-text-small uk-text-muted">Beier, Corwin and Fadel</span>
                                     </a>
                                 </li>
 
-        
+
                                 <li>
                                     <a href="#" class="md-list-content" data-invoice-id="22">
-                                        <span class="md-list-heading uk-text-truncate">Invoice 47/2015 <span class="uk-text-small uk-text-muted">(22 Feb)</span></span>
+                                        <span class="md-list-heading uk-text-truncate">Invoice 47/2015 <span
+                                                class="uk-text-small uk-text-muted">(22 Feb)</span></span>
                                         <span class="uk-text-small uk-text-muted">Effertz-Schoen</span>
                                     </a>
                                 </li>
 
-                    </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -241,7 +265,7 @@
 
 @section('script_bottom')
     @verbatim
-    <script id="invoice_template" type="text/x-handlebars-template">
+        <script id="invoice_template" type="text/x-handlebars-template">
         <div class="md-card-toolbar{{#if invoice.header}} hidden-print{{/if}}">
             <div class="md-card-toolbar-actions hidden-print">
                 <i class="md-icon material-icons" id="invoice_print">&#xE8ad;</i>
@@ -355,7 +379,7 @@ East Jenifer, TN 41275-0307<br>
         </div>
     </script>
 
-    <script id="invoice_form_template" type="text/x-handlebars-template">
+        <script id="invoice_form_template" type="text/x-handlebars-template">
         <form action="" class="uk-form-stacked">
             <div class="md-card-toolbar">
                 <div class="md-card-toolbar-actions">
@@ -432,7 +456,7 @@ East Jenifer, TN 41275-0307<br>
             </div>
         </form>
     </script>
-    <script id="invoice_form_template_services" type="text/x-handlebars-template">
+        <script id="invoice_form_template_services" type="text/x-handlebars-template">
         {{#ifCond invoice_service_id '!==' 1}}
         <hr class="md-hr"/>
         {{/ifCond}}
@@ -487,7 +511,7 @@ East Jenifer, TN 41275-0307<br>
         (function() {
             var wf = document.createElement('script');
             wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
             wf.type = 'text/javascript';
             wf.async = 'true';
             var s = document.getElementsByTagName('script')[0];
@@ -509,14 +533,14 @@ East Jenifer, TN 41275-0307<br>
 
     <!--  invoices functions -->
     <script src="altair/assets/js/pages/page_invoices.js"></script>
-    
+
     <script>
         $(function() {
-            if(isHighDensity) {
+            if (isHighDensity) {
                 // enable hires images
                 altair_helpers.retina_images();
             }
-            if(Modernizr.touch) {
+            if (Modernizr.touch) {
                 // fastClick (touch devices)
                 FastClick.attach(document.body);
             }
@@ -635,7 +659,7 @@ East Jenifer, TN 41275-0307<br>
                 $html
                     .removeClass(
                         'app_theme_a app_theme_b app_theme_c app_theme_d app_theme_e app_theme_f app_theme_g app_theme_h app_theme_i app_theme_dark'
-                        )
+                    )
                     .addClass(this_theme);
 
                 if (this_theme == '') {
@@ -645,7 +669,7 @@ East Jenifer, TN 41275-0307<br>
                     if (this_theme == 'app_theme_dark') {
                         $('#kendoCSS').attr('href',
                             'altair/altair/altair/bower_components/kendo-ui/styles/kendo.materialblack.min.css'
-                            )
+                        )
                     }
                 }
 
@@ -714,7 +738,7 @@ East Jenifer, TN 41275-0307<br>
             // toggle boxed layout
 
             if ((localStorage.getItem("altair_layout") !== null && localStorage.getItem("altair_layout") ==
-                'boxed') || $body.hasClass('boxed_layout')) {
+                    'boxed') || $body.hasClass('boxed_layout')) {
                 $boxed_layout_toggle.iCheck('check');
                 $body.addClass('boxed_layout');
                 $(window).resize();
