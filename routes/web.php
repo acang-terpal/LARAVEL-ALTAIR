@@ -9,6 +9,7 @@ use App\Http\Controllers\ScrumBoardController;
 use App\Http\Controllers\SnippetsController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\LayoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +46,5 @@ Route::get('/forms_wizard', [FormController::class, 'getFormWizardPage']);
 Route::get('/forms_wysiwyg_ckeditor', [FormController::class, 'getWysiwygCkeditorPage']);
 Route::get('/forms_wysiwyg_inline', [FormController::class, 'getWysiwygInlinePage']);
 Route::get('/forms_wysiwyg_tinymce', [FormController::class, 'getWysiwygTinymcePage']);
+Route::get('/layout_top_menu', [LayoutController::class, 'getTopMenuPage']);
+Route::get('/layout_header_full', [LayoutController::class, 'getHeaderFullPage']);
