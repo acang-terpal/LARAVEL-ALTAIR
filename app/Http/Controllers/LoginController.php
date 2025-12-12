@@ -34,5 +34,21 @@ class LoginController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
+    }
+
+    public function doLogout(Request $request, $user){
+        $user = Auth::user();
+
+        // Invalidate session and regenerate token
+        Auth::guard()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
+        // Check role to decide redirection (using hasRole() or getRoleNames() methods from Spatie)
+        if ($user && $user->hasRole('admin')) {
+            return redirect('/'); // Redirect to admin login page
         }
+
+        return redirect('/'); // Default redirect
+    }
 }
