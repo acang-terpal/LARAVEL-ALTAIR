@@ -28,7 +28,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [LoginController::class, 'getLoginPage']);
-Route::get('/index', [IndexController::class, 'getPage']);
+Route::post('/doLogin', [LoginController::class, 'doLogin'])->name('doLogin');;
+
+Route::middleware(['role:admin'])->group(function () {
+    Route::get('/index', [IndexController::class, 'getPage'])->name('index');
+});
+
 Route::get('/mailbox', [MailBoxController::class, 'getPage']);
 Route::get('/page_invoices', [InvoiceController::class, 'getPage']);
 Route::get('/page_chat', [ChatController::class, 'getPage']);

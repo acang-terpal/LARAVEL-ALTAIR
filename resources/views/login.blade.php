@@ -33,17 +33,18 @@
                 <div class="login_heading">
                     <div class="user_avatar"></div>
                 </div>
-                <form>
+                <form action="{{ route('doLogin') }}" method="post">
+                    @csrf
                     <div class="uk-form-row">
-                        <label for="login_username">Username</label>
-                        <input class="md-input" type="text" id="login_username" name="login_username" />
+                        <label for="email">Username</label>
+                        <input class="md-input" type="email" id="email" name="email" />
                     </div>
                     <div class="uk-form-row">
-                        <label for="login_password">Password</label>
-                        <input class="md-input" type="password" id="login_password" name="login_username" />
+                        <label for="password">Password</label>
+                        <input class="md-input" type="password" id="password" name="password" />
                     </div>
                     <div class="uk-margin-medium-top">
-                        <a href="index" class="md-btn md-btn-primary md-btn-block md-btn-large">Sign In</a>
+                        <button type="submit" class="md-btn md-btn-primary md-btn-block md-btn-large">Sign In</button>
                     </div>
                     <div class="uk-grid uk-grid-width-1-3 uk-grid-small uk-margin-top">
                         <div><a href="#" class="md-btn md-btn-block md-btn-facebook"
