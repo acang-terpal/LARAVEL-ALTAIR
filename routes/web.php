@@ -27,8 +27,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('login');
 // });
 
-Route::get('/', [LoginController::class, 'getLoginPage']);
-Route::post('/doLogin', [LoginController::class, 'doLogin'])->name('doLogin');;
+Route::get('/', [LoginController::class, 'getLoginPage'])->name('getLoginPage');
+Route::post('/doLogin', [LoginController::class, 'doLogin'])->name('doLogin');
 
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/index', [IndexController::class, 'getPage'])->name('index');

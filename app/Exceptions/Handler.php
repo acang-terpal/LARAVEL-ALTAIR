@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use Spatie\Permission\Exceptions\UnauthorizedException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -25,6 +28,20 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+
+        //if user not login or session invalid
+        $this->renderable(function (UnauthorizedException $e, Request $request) {
+            // If the request expects JSON, you can return a JSON response
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'responseMessage' => 'You do not have the required authorization.',
+                    'responseStatus' => 403,
+                ], 403);
+            }
+
+            // For web requests, redirect them
+            return redirect()->route('getLoginPage')->with('error', 'You do not have permission to access this page.');
         });
     }
 }
