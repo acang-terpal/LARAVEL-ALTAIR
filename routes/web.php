@@ -56,4 +56,6 @@ Route::group([
     Route::get('/layout_top_menu', [LayoutController::class, 'getTopMenuPage']);
     Route::get('/layout_header_full', [LayoutController::class, 'getHeaderFullPage']);
     Route::get('/kendoui_autocomplete', [KendouiController::class, 'getKendouiAutocompletePage']);
+    Route::get('/kendoui_calendar', [KendouiController::class, 'getKendouiCalendar']);
+    Route::get('/kendoui_colorpicker', [KendouiController::class, 'getKendouiColorPicker']);
 });
