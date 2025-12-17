@@ -1,4 +1,3 @@
-
 @extends('layout.master')
 
 @section('head')
@@ -6,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Remove Tap Highlight on Windows Phone IE -->
-    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="msapplication-tap-highlight" content="no" />
 
     <link rel="icon" type="image/png" href="altair/assets/img/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="altair/assets/img/favicon-32x32.png" sizes="32x32">
@@ -14,9 +13,10 @@
     <title>Altair Admin v2.7.0</title>
 
     <!-- additional styles for plugins -->
-    <!-- htmleditor (codeMirror) -->
-    <link rel="stylesheet" href="altair/bower_components/codemirror/lib/codemirror.css">
-    
+    <!-- kendo UI -->
+    <link rel="stylesheet" href="altair/bower_components/kendo-ui/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="altair/bower_components/kendo-ui/styles/kendo.material.min.css" id="kendoCSS" />
+
     <!-- uikit -->
     <link rel="stylesheet" href="altair/bower_components/uikit/css/uikit.almost-flat.min.css" media="all">
 
@@ -25,7 +25,7 @@
 
     <!-- style switcher -->
     <link rel="stylesheet" href="altair/assets/css/style_switcher.min.css" media="all">
-    
+
     <!-- altair admin -->
     <link rel="stylesheet" href="altair/assets/css/main.min.css" media="all">
 
@@ -34,14 +34,14 @@
 
     <!-- matchMedia polyfill for testing media queries in JS -->
     <!--[if lte IE 9]>
-        <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.js"></script>
-        <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.addListener.js"></script>
-        <link rel="stylesheet" href="altair/assets/css/ie.css" media="all">
-    <![endif]-->
+            <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.js"></script>
+            <script type="text/javascript" src="altair/bower_components/matchMedia/matchMedia.addListener.js"></script>
+            <link rel="stylesheet" href="altair/assets/css/ie.css" media="all">
+        <![endif]-->
 @endsection
 
-@section("header")
-    @include("layout.header")
+@section('header')
+    @include('layout.header')
 @endsection
 
 @section('sidebar_main')
@@ -49,22 +49,102 @@
 @endsection
 
 @section('content')
-<div id="page_content">
-    <div id="page_content_inner">
+    <div id="page_content">
+        <div id="page_content_inner">
 
-        <h3 class="heading_b uk-margin-bottom">Full Header Example</h3>
+            <div class="md-card">
+                <div class="md-card-content">
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-large-1-2">
+                            <form class="uk-form-stacked">
+                                <div class="uk-form-row">
+                                    <label for="kUI_automplete" class="uk-form-label">Choose shipping countries:</label>
+                                    <input id="kUI_automplete" class="uk-width-1-1" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="uk-width-large-1-2">
+                            <pre class="line-numbers"><code class="language-javascript">// AutoComplete (basic usage)
+var countries = ["Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "Belgium", "Bosnia & Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom", "Vatican City"];
 
-        <div class="md-card">
-            <div class="md-card-content">
-                <div class="uk-grid" data-uk-grid-margin>
-                    <div class="uk-width-1-1">
-                        Animi labore temporibus sit error odio quasi iste id consequatur modi ut enim doloremque ipsa illo enim at a qui officiis et nam nostrum earum sed nesciunt aliquid at quia aliquid et cumque id fugiat corporis nam dolor eligendi fuga neque suscipit nobis blanditiis nostrum vero impedit assumenda quia alias nesciunt sed asperiores voluptatem nesciunt quo recusandae soluta pariatur porro et provident quis et quisquam sequi earum sequi quis nesciunt aliquid sit cum totam modi aut occaecati fugiat accusantium ab sint aliquam ipsam reprehenderit et culpa eum et iusto temporibus sed odit rerum quae minus quas eaque soluta molestias itaque et beatae reiciendis optio sed ratione maiores ipsum quidem ea quidem necessitatibus ex ut sequi est molestias in consequuntur voluptatem expedita odio occaecati animi doloremque est eligendi optio quo exercitationem eligendi esse voluptas enim soluta quod quas possimus quo dolores ullam non dolorem vel unde repudiandae ratione in odit sapiente quibusdam sed voluptatibus illum officia quis odit et maxime necessitatibus perferendis tempore ex perspiciatis et magnam voluptas recusandae et ut voluptatibus rerum autem quasi earum velit dicta commodi sunt odio ut et esse fuga corrupti itaque ipsa dolore pariatur nostrum consequatur blanditiis alias et eaque nisi nesciunt sint ad facilis aspernatur sed est adipisci sit est mollitia voluptas veniam et quidem architecto doloremque sint voluptas ut sit accusamus ducimus ipsam quo animi placeat doloribus sit quaerat ea magni provident doloremque nulla reprehenderit deserunt repudiandae quas sed iure quibusdam asperiores officiis vero illum quasi omnis est ducimus recusandae repellendus totam quo consequuntur distinctio voluptates aut reiciendis ipsam natus ducimus unde vero rerum quia ex qui corporis est omnis sit dolorum vitae soluta autem quia soluta itaque quasi qui unde est temporibus.                    </div>
+var countriesDS = new kendo.data.DataSource({
+  data: countries
+});
+
+var getFilters = function (filter) {
+  var filters = [];
+  filters.push(filter);
+  values = autoComplete.value().split(", ");
+  values.pop();
+  $.each(values, function (index, item) {
+    filters.push({field: "", ignoreCase: true, operator: "neq", value: item});
+  });
+  return filters;
+};
+
+var autoComplete = $(selector).kendoAutoComplete({
+  filter: "startswith",
+  placeholder: "Select country...",
+  separator: ", ",
+  dataSource: {
+    transport: {
+      read: function (options, operation) {
+        countriesDS.read();
+        countriesDS.filter({logic: "and", filters: getFilters(options.data.filter.filters[0])});
+        options.success(countriesDS.view());
+      }
+    },
+    serverFiltering: true
+  }
+}).data("kendoAutoComplete");</code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="md-card">
+                <div class="md-card-content">
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-large-1-2">
+                            <form class="uk-form-stacked">
+                                <div class="uk-form-row">
+                                    <label for="kUI_automplete_template" class="uk-form-label">Contacts:</label>
+                                    <input id="kUI_automplete_template" class="uk-width-1-1" />
+                                    <span class="uk-form-help-block">Hint: type "am" or "wi"</span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="uk-width-large-1-2">
+                            <pre class="line-numbers"><code class="language-javascript">// AutoComplete (custom template)
+$(selector).kendoAutoComplete({
+  minLength: 2,
+  dataTextField: &quot;ContactName&quot;,
+  template:
+    '&lt;div class=&quot;k-list-wrapper&quot;&gt;'+
+      '&lt;span class=&quot;k-state-default k-list-wrapper-addon&quot;&gt;' +
+          '&lt;img src=\&quot;altair/assets/img/avatars/avatar#:data.CustomerID#.png\&quot; alt=\&quot;#:data.CustomerID#\&quot; /&gt;' +
+      '&lt;/span&gt;' +
+      '&lt;span class=&quot;k-state-default k-list-wrapper-content&quot;&gt;' +
+          '&lt;p&gt;#: data.ContactName #&lt;/p&gt;' +
+          '&lt;span class=&quot;uk-text-muted uk-text-small&quot;&gt;#: data.CompanyName #&lt;/span&gt;' +
+      '&lt;/span&gt;' +
+    '&lt;/div&gt;',
+  dataSource: {
+  transport: {
+    read: {
+      dataType: &quot;json&quot;,
+        url: &quot;data/autocomplete_data.json&quot;
+      }
+    }
+  },
+  height: 204
+}).data(&quot;kendoAutoComplete&quot;);</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
     </div>
-</div>
 @endsection
 
 @section('sidebar_secondary')
@@ -72,21 +152,48 @@
 @endsection
 
 @section('script_bottom')
-        <!-- common functions -->
+    <!-- google web fonts -->
+    <script>
+        WebFontConfig = {
+            google: {
+                families: [
+                    'Source+Code+Pro:400,700:latin',
+                    'Roboto:400,300,500,700,400italic:latin'
+                ]
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <!-- common functions -->
     <script src="altair/assets/js/common.min.js"></script>
     <!-- uikit functions -->
     <script src="altair/assets/js/uikit_custom.min.js"></script>
     <!-- altair common functions/helpers -->
     <script src="altair/assets/js/altair_admin_common.min.js"></script>
 
+    <!-- page specific plugins -->
+    <!-- kendo UI -->
+    <script src="altair/assets/js/kendoui_custom.min.js"></script>
+
+    <!--  kendoui functions -->
+    <script src="altair/assets/js/pages/kendoui.min.js"></script>
 
     <script>
         $(function() {
-            if(isHighDensity) {
+            if (isHighDensity) {
                 // enable hires images
                 altair_helpers.retina_images();
             }
-            if(Modernizr.touch) {
+            if (Modernizr.touch) {
                 // fastClick (touch devices)
                 FastClick.attach(document.body);
             }
@@ -205,7 +312,7 @@
                 $html
                     .removeClass(
                         'app_theme_a app_theme_b app_theme_c app_theme_d app_theme_e app_theme_f app_theme_g app_theme_h app_theme_i app_theme_dark'
-                        )
+                    )
                     .addClass(this_theme);
 
                 if (this_theme == '') {
@@ -214,7 +321,7 @@
                     localStorage.setItem("altair_theme", this_theme);
                     if (this_theme == 'app_theme_dark') {
                         $('#kendoCSS').attr('href',
-                            'altair/altair/altair/bower_components/kendo-ui/styles/kendo.materialblack.min.css')
+                            'altair/altair/bower_components/kendo-ui/styles/kendo.materialblack.min.css')
                     }
                 }
 
@@ -283,7 +390,7 @@
             // toggle boxed layout
 
             if ((localStorage.getItem("altair_layout") !== null && localStorage.getItem("altair_layout") ==
-                'boxed') || $body.hasClass('boxed_layout')) {
+                    'boxed') || $body.hasClass('boxed_layout')) {
                 $boxed_layout_toggle.iCheck('check');
                 $body.addClass('boxed_layout');
                 $(window).resize();

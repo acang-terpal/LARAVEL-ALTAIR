@@ -22,12 +22,12 @@ class LoginController extends Controller
 
             // Check if the user has the 'admin' role
             if ($user->hasRole('admin')) {
-                $request->session()->regenerate(true);
+                $request->session()->regenerate(false);
                 return redirect()->intended('/index'); // Redirect admin
             }
 
             // Default redirect for other users
-            $request->session()->regenerate(true);
+            $request->session()->regenerate(false);
             return redirect()->intended('/mailbox');
         }
 
