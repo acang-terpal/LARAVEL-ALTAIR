@@ -59,4 +59,14 @@ Route::group([
     Route::get('/kendoui_calendar', [KendouiController::class, 'getKendouiCalendar']);
     Route::get('/kendoui_colorpicker', [KendouiController::class, 'getKendouiColorPicker']);
     Route::get('/kendoui_combobox', [KendouiController::class, 'getKendouiCombobox']);
+    Route::get('/kendoui_datepicker', [KendouiController::class, 'getKendouiDatepicker']);
+    Route::get('/kendoui_dropdown_list', [KendouiController::class, 'getKendouiDropDownList']);
+    Route::get('/kendoui_masked_input', [KendouiController::class, 'getKendouiMaskedInput']);
+    Route::get('/kendoui_menu', [KendouiController::class, 'getKendouiMenu']);
+    Route::get('/kendoui_multiselect', [KendouiController::class, 'getKendouiMultiSelect']);
+    Route::get('/kendoui_numeric_textbox', [KendouiController::class, 'getKendouiNumericTextBox']);
+    Route::get('/kendoui_panelbar', [KendouiController::class, 'getKendouiPanelBar']);
+    Route::get('/kendoui_timepicker', [KendouiController::class, 'getKendouiTimePicker']);
+    Route::get('/kendoui_toolbar', [KendouiController::class, 'getKendouiToolbar']);
+    Route::get('/kendoui_window', [KendouiController::class, 'getKendouiWindow']);
 });

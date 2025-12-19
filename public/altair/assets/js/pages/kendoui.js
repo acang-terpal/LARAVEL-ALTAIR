@@ -61,7 +61,7 @@ kendoUI = {
                 template:
                 '<div class="k-list-wrapper">'+
                     '<span class="k-state-default k-list-wrapper-addon">' +
-                        '<img src=\"altair/assetsimg/avatars/avatar_#:data.CustomerID#_tn.png\" alt=\"#:data.CustomerID#\" />' +
+                        '<img src=\"altair/assets/img/avatars/avatar_#:data.CustomerID#_tn.png\" alt=\"#:data.CustomerID#\" />' +
                     '</span>' +
                     '<span class="k-state-default k-list-wrapper-content">' +
                         '<p>#: data.ContactName #</p>' +
@@ -343,7 +343,7 @@ kendoUI = {
                 itemTemplate:
                     '<div class="k-list-wrapper">'+
                         '<span class="k-state-default k-list-wrapper-addon">' +
-                            '<img src=\"altair/assetsimg/avatars/avatar_#:data.CustomerID#_tn.png\" alt=\"#:data.CustomerID#\" />' +
+                            '<img src=\"altair/assets/img/avatars/avatar_#:data.CustomerID#_tn.png\" alt=\"#:data.CustomerID#\" />' +
                         '</span>' +
                         '<span class="k-state-default k-list-wrapper-content">' +
                             '<p>#: data.ContactName #</p>' +
@@ -351,13 +351,13 @@ kendoUI = {
                         '</span>' +
                     '</div>',
                 tagTemplate:
-                    '<img class="k-tag-image" src=\"altair/assetsimg/avatars/avatar_#:data.CustomerID#_tn.png\" alt=\"${data.CustomerID}\" />' +
+                    '<img class="k-tag-image" src=\"altair/assets/img/avatars/avatar_#:data.CustomerID#_tn.png\" alt=\"${data.CustomerID}\" />' +
                     '#: data.ContactName #',
                 dataSource: {
                     transport: {
                         read: {
                             dataType: "json",
-                            url: "data/kUI_users_data.min.json"
+                            url: "altair/data/kUI_users_data.min.json"
                         }
                     }
                 },

@@ -110,7 +110,7 @@
                     <li class="{{ $activeSidebarMain == "kendoui_dropdown_list" ? "act_item" : ""}}"><a href="kendoui_dropdown_list">DropDownList</a></li>
                     <li class="{{ $activeSidebarMain == "kendoui_masked_input" ? "act_item" : ""}}"><a href="kendoui_masked_input">Masked Input</a></li>
                     <li class="{{ $activeSidebarMain == "kendoui_menu" ? "act_item" : ""}}"><a href="kendoui_menu">Menu</a></li>
-                    <li class="{{ $activeSidebarMain == "kendo_multiselect" ? "act_item" : ""}}"><a href="kendoui_multiselect">MultiSelect</a></li>
+                    <li class="{{ $activeSidebarMain == "kendoui_multiselect" ? "act_item" : ""}}"><a href="kendoui_multiselect">MultiSelect</a></li>
                     <li class="{{ $activeSidebarMain == "kendoui_numeric_textbox" ? "act_item" : ""}}"><a href="kendoui_numeric_textbox">Numeric TextBox</a></li>
                     <li class="{{ $activeSidebarMain == "kendoui_panelbar" ? "act_item" : ""}}"><a href="kendoui_panelbar">PanelBar</a></li>
                     <li class="{{ $activeSidebarMain == "kendoui_timepicker" ? "act_item" : ""}}"><a href="kendoui_timepicker">TimePicker</a></li>
